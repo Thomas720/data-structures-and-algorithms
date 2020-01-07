@@ -63,9 +63,7 @@ Return the modified array.
 
 const removeOne = (num, arr) => {
   // Solution code here...
-if (num % 3 === 2) {
-  arr.pop();
-}
+if (num % 3 === 2) arr.pop();
 
 };
 
@@ -94,6 +92,7 @@ const removeWithForEach = (arr, callback) => {
 };
 
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -106,6 +105,7 @@ This anonymous function should accept up to three arguments: the element, the in
 
 const removeWithAnon = (arr) => {
   // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -145,6 +145,24 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   // Solution code here...
+  arr.forEach(num) {
+    if (num % 15 ===0 ){
+      arr.push('Fizz Buzz');
+      else (num % 3 === 0){
+        arr.push('Fuzz');
+      }
+      else if(num % 5 === 0){
+        arr.push('Buzz');
+      }
+    }
+  }
+ 
+  return arr;
+
+
+    }
+  
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
