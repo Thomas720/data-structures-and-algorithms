@@ -96,8 +96,10 @@ console.log(a) prints [1, 2, 3, 4]
 
 const append = (arr1, arr2) => {
   // Solution code here...
-  let secondArr = [a,b];
-  secondArr.append(arr1,arr2);
+  // let secondArr = [a,b];
+  arr2.forEach((item) => {
+    arr1.push(item);
+  });
 
 };
 
