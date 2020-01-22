@@ -142,7 +142,10 @@ Write a function named totalCharacters that takes in an array and returns the nu
 
 const totalCharacters = (arr) => {
   // Solution code here...
-  
+  for(let i = 0; i < arr.length; i++){
+      return arr[i];
+  }
+
 };
 
 /* ------------------------------------------------------------------------------------------------
