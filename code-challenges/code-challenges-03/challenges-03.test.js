@@ -12,8 +12,14 @@ const sortBackwards = (arr) => {
 
 
 
-  return arr.sort(arr);
+  return arr;
+  console.log(arr);
 };
+// arr.sort((a, b) => {
+
+//   return a < b;
+
+// });
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
