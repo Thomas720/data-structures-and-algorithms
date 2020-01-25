@@ -14,8 +14,12 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  let numInput = /[0-9]/gm;
+  numInput.test(input);
   
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -27,9 +31,11 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-};
+  
 
-/* ------------------------------------------------------------------------------------------------
+  return str.match(/[A-Z]\w*/gm) || [];
+  
+  /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
 Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
