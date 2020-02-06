@@ -9,15 +9,15 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  let tally = 0;
+  let currentValue = 0
   input.map(values => {
     values.filter(value => {
       if (value === target) {
-        tally++
+        currentValue++
       }
     })
   })
-  return tally
+  return currentValue
 };
 
 /* ------------------------------------------------------------------------------------------------
