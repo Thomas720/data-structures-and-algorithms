@@ -2,52 +2,44 @@
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
-
 Write a function named howMuchPencil that takes in a string, as written on the side of a pencil.
-
 As you sharpen the pencil, the string will become shorter and shorter, starting by removing the first letter.
-
 Your function should use slice within a loop and return an array of each successive string result from losing letters to the sharpener, until nothing is left.
-
 For example, if the input is 'Welcome', the output will be:
 ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', ''].
 ------------------------------------------------------------------------------------------------ */
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
-  for (let i = 0; i < str.length + 1; i++){
-        
-   result.push(str.slice([i]));
-        
-      }
-      return result;
-  };
-
+  result.push(str)
+  let splitted = str.split("")
+  // console.log(splitted)
+  splitted.forEach((value,idx) => {
+    let sliced = str.slice(idx+1)
+    result.push(sliced)
+    // console.log(result)
+  })
+  return result;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
-
 Write a function name wordsToCharList that, given a string as input, returns a new array where every element is a character of the input string.
-
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
-  return arr.split("");
+  let newArr = arr.split("")
+  
+  return newArr
 };
 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
-
 You are making a grocery list for ingredients needed in the gruffalo crumble recipe, below. Rather than taking the entire recipe, you only want a list of the item names.
-
 Write a function named listFoods that takes in the recipe and returns a new array of the food items without any amount or units. Just the name. For example, '1 cup flour' will return 'flour'.
-
 Use slice for this function, maybe more than once. The Array.indexOf() method may also be helpful.
-
 Do not use split for this function.
 ------------------------------------------------------------------------------------------------ */
 
@@ -81,61 +73,52 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
-    let result = [];
-    // Solution code here...
-    return result;
-    };
-//    let rec = /[A-Za-z]/gm;
-//   result.match(rec);
-// function filter_list(l) {
-
-    // Initiate new array
-  
-    // let newArray = []; 
-  
-    // Loop through items in the array
-  
-    // If the element is not in a string, add it to newArray
-    // for (let i = 0; i < recipe.length; i ++) {
-  
-  
-    //    if (i = /[A-Za-z]/gm) {
-    //      result.push(recipe);
-    //    }
-    // }
-//     return result;
-//   }
-
+  let result = [];
+  let recipeList = recipe.ingredients
+  recipeList.forEach((value,idx) => {
+    return value.includes('medium') ? result.push(value.slice(15,23)): value.includes('pounds') ? result.push(value.slice(9,20)) : value.includes('gallons') ? result.push(value.slice(10,26)) : result.push(value.slice(8,21))
+  })
+  return result;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
-
 Write a function named splitFoods that uses split to produce the same output as Challenge 3.
-
 You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  let recipeList = recipe.ingredients
+  recipeList.forEach(value => {
+    let words = value.split(" ")
+    console.log(words)
+    return words[4] ? result.push(`${words[2]} ${words[3]} ${words[4]}`)
+      :words[3] ? result.push(`${words[2]} ${words[3]}`)
+        :result.push(words[2]);
+  })
   return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
-
 Use the same recipe from Challenge 3, above.
-
 Write a function named stepAction that takes in the recipe and extracts the action verbs from the steps. Fortunate for you, the action verbs are the first word of each action.
-
 Return a new array containing just the verbs. For example, ['Mix until evenly distributed'] returns ['Mix'].
 ------------------------------------------------------------------------------------------------ */
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  let directionList = recipe.steps;
+  //   console.log(directionList)
+  directionList.forEach(value => {
+    let words = value.split(' ');
+    result.push(words[0])
+  })
+  
   return result;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
