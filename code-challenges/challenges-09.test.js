@@ -170,9 +170,10 @@ const isPrime = (value) => {
   }
   return value > 1;
 };
-
+  
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
