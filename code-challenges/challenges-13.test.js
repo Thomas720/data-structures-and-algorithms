@@ -50,46 +50,60 @@ const standardizePhoneNumbers = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
-
 Write a function named onlyOddChars that takes in a string and returns only the odd-index characters from that string.
-
 For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  let splitted = str.split('')
+  return splitted.filter((value,idx) => {
+    if (idx%2 !== 0 ) {
+      return value
+    }
+  }).join('')
+
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
-
 Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  let result = arr.filter(value => {
+    return value.includes(':)')
+  })
+  if (arr.length !== result.length) {
+    return false;
+  } else {
+    return true;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
-
 Write a function named findAnything that takes in an array of strings, along with a target string. Return an array containing only those strings from the original array that contain the target string.
 ------------------------------------------------------------------------------------------------ */
 
 const findAnything = (arr, target) => {
-  // Solution code here...
+  return arr.filter(value => {
+    return value.includes(target)
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
-
 Write a function named findEvery that takes in an array of strings, along with a target string. Return a Boolean based on whether or not every string in the array contains the target string.
 ------------------------------------------------------------------------------------------------ */
 
 const findEvery = (arr, target) => {
-  // Solution code here...
-};
+  let newArr = arr.filter(value => {
+    return value.includes(target)
 
+  })
+  return arr.length === newArr.length ? true
+    : false
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8
 
