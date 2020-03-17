@@ -8,5 +8,6 @@
 I started out by visualizing how my brain tried to solve the problem on its own. Then I created a formula that shows the relationship of the indexes of the elements before and after the reverse.
 
 ## Solution
+* The solution was to use temp = first, first - last, last = temp algorithm.
 
-[Array-Riverse]((https://thomas720.github.io/data-structures-and-algorithms/array-reverse))
+[Array-Riverse]((https://thomas720.github.io/data-structures-and-algorithms/arrayReverse))
