@@ -1,11 +1,12 @@
 # Reverse an Array
-<!-- Short summary or background information -->
+* It's a function called reverseArray which takes an array as an argument. Without ussing any method, return an array with elements in reversed order.
 
 ## Challenge
-<!-- Description of the challenge -->
+* It was very challenging to start getting the idea of revering without using push or pop but finaly i found some surce from YouTube and understand the logic of reversing.
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+I started out by visualizing how my brain tried to solve the problem on its own. Then I created a formula that shows the relationship of the indexes of the elements before and after the reverse.
 
 ## Solution
-[Array-Riverse]()
+
+[Array-Riverse]((https://thomas720.github.io/data-structures-and-algorithms/array-reverse))
