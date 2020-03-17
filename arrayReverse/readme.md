@@ -10,4 +10,4 @@ I started out by visualizing how my brain tried to solve the problem on its own.
 ## Solution
 * The solution was to use temp = first, first - last, last = temp algorithm.
 
-[Array-Riverse]((https://thomas720.github.io/data-structures-and-algorithms/arrayReverse))
+- [Reverse an Array White Board ](https://thomas720.github.io/data-structures-and-algorithms/assets)
