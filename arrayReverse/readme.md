@@ -8,6 +8,4 @@
 I started out by visualizing how my brain tried to solve the problem on its own. Then I created a formula that shows the relationship of the indexes of the elements before and after the reverse.
 
 ## Solution
-* The solution was to use temp = first, first - last, last = temp algorithm.
-
-- [Reverse an Array White Board ](https://thomas720.github.io/data-structures-and-algorithms/assets)
+- [Array Reverse](https://github.com/thomas720/data-structures-and-algorithms/tree/master/challenges/arrayReverse)
