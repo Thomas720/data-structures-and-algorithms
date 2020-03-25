@@ -1,7 +1,8 @@
 'use strict';
 
 
-function binarySearch(arr, value) {
+ binarysearch = (arr, value) => {
+  
   let high = arr.lenght -1;
   let low = 0;
   let mid = 0; 
@@ -25,7 +26,10 @@ function binarySearch(arr, value) {
   }
 
   return -1;
+
 }
 
-module.exports = binarySearch;
+
+
+module.exports = binarysearch;
 
