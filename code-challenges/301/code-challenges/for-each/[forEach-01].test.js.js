@@ -148,10 +148,10 @@ const fizzbuzz = (arr) => {
   arr.forEach(num) {
     if (num % 15 ===0 ){
       arr.push('Fizz Buzz');
-      else (num % 3 === 0){
+      else if (num % 3 === 0){
         arr.push('Fuzz');
       }
-      else if(num % 5 === 0){
+      else (num % 5 === 0){
         arr.push('Buzz');
       }
     }
