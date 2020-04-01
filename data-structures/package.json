@@ -4,12 +4,12 @@
   "description": "",
   "main": "linked-list.js",
   "scripts": {
-    "start": "node index.js",
+    
     "lint": "eslint **/*.js",
     "test": "jest --verbose --coverage",
     "test-watch": "jest --watchAll --verbose --coverage"
   },
-  "author": "",
+  "author": "Thomas Tilahun",
   "license": "ISC",
   "dependencies": {
     "jest": "^25.2.4",

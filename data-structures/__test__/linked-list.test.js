@@ -1,43 +1,84 @@
 'use strict';
 
-let linkedListContent = require('../linkedList/linked-list.js');
+const classes = require('../linkedList/linked-list.js');
+const LinkedList = classes.LinkedList;
 
-LinkedList = linkedListContent.LinkedList;
+describe('happy path', () => {
+    it('successfully instantiates an empty list', () => {
+        expect(() => {
+            return new LinkedList();
+        }).not.toThrow();
 
+        let myList = new LinkedList();
+        expect(myList.head).toBe(null);
+    });
 
-describe('Ading new linkd list', () => {
-  it('addind New List', () => {
-    let list = new LinkedList();
-    expect(list).toBeTruthy();
-  });
+    it('properly inserts a value into the list', () => {
+        let myList = new LinkedList();
 
-  it('Adding the New Value', () => {
-    let list = new LinkedList();
-    let response = list.insert('b');
+        expect(() => {
+            myList.insert('A');
+        }).not.toThrow();
+        let str = '[' + myList.head.val + '] -> ' + myList.head.next;
+        expect(str).toBe('[A] -> null');
+    });
 
-    expect(response.val).toBe('b');
-  });
+    it('has a head property that points to the beginning', () => {
+        let myList = new LinkedList();
 
-  if('Put Head at the begigin', () => {
-    let list = new LinkedList();
-    let response = list.insert('b');
+        myList.insert('A');
+        myList.insert('B');
 
-    expect(response.head.val).toBe('b');
-  })
+        expect(myList.head).toBeDefined();
+        expect(myList.head.val).toBe('B');
+    });
 
-  it('Search the existing value', () => {
-    let list = new LinkedList();
-    list.insert('b');
-    let response = list.includes('b');
+    it('can insert multiple Nodes into the list', () => {
+        let myList = new LinkedList();
 
-    expect(response).toBe(true);
-  });
+        myList.insert('E');
+        myList.insert('D');
+        myList.insert('C');
+        myList.insert('B');
+        myList.insert('A');
 
-  it('Printing lists', () => {
-    let list = new LinkedList();
-    list.insert('b');
-    let response = list.toString();
+        expect(myList.head).toBeDefined();
+        expect(myList.head.val).toBe('A');
+        expect(myList.head.next.val).toBe('B');
+        expect(myList.head.next.next.val).toBe('C');
+        expect(myList.head.next.next.next.val).toBe('D');
+        expect(myList.head.next.next.next.next.val).toBe('E');
+    });
 
-    expect(response).toBe('{ b } -> NULL');
-  })
-})
+    it('can search for an existing Node', () => {
+        let myList = new LinkedList();
+        myList.insert('A');
+        myList.insert('B');
+        myList.insert('C');
+
+        expect(myList.includes('B')).toBe(true);
+    });
+
+    it('can print the list in an expected way', () => {
+        let myList = new LinkedList();
+        myList.insert(1);
+        myList.insert(2);
+        myList.insert(3);
+
+        // expected string
+        let str = '[3] -> [2] -> [1] -> null';
+
+        expect(myList.toString()).toBe(str);
+    });
+});
+
+describe('expected failures', () => {
+    it("can respond correctly when searching for a Node that doesn't exist", () => {
+        let myList = new LinkedList();
+        myList.insert('A');
+        myList.insert('B');
+        myList.insert('C');
+
+        expect(myList.includes('D')).toBe(false);
+    });
+});

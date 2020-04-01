@@ -1,81 +1,63 @@
 'use strict';
 
 class Node {
-
     constructor(val) {
         this.val = val;
-        this.next = next;
-        this.prev = prev;
-
+        this.next = null;
+        this.prev = null;
     }
+}
 
-};
-
-class Linkedlist {
-
-    constructor () {
+class LinkedList {
+    constructor() {
         this.head = null;
     }
 
-    insert(value) {
-        
-    try{
-        let newNode = new Node(value);
-        newNode.next = this.head;
-        this.head = newNode;
+    insert(val) {
+        try {
+            let newNode = new Node(val);
 
-        return newNode;
-    
+            // assume list starts like this:
+            // [A] -> null
+            // this.head = [A]
+
+            // newNode.next = A
+            // [val] -> [A] -> null
+            // this.head = [A]
+
+            newNode.next = this.head;
+            this.head = newNode;
+            // [val] -> [A] -> null
+            // this.head = [val]
+        } catch (e) {
+            throw e;
+        }
     }
 
-    catch(e) {console.error('error when inserting NODE')}
+    includes(val) {
+        let currentNode = this.head;
 
-    }
-
-includes(searchValues) {
-    try {
-        let currentValue = this.head;
-
-        while(currentValue) {
-
-            if(currentValue.val === searchValues){
-                console.log(true);
-                return true;
-
-            } else {
-                currentValue = currentValue.next;
-            }
-
+        while (currentNode) {
+            if (currentNode.val === val) return true;
+            currentNode = currentNode.next;
         }
 
-        console.log(false);
         return false;
     }
-    catch(e){
-        console.error('No value found')
-    }
-}
 
-
-toString() {
-    try{
-        let currentValue = this.head;
+    toString() {
+        let currentNode = this.head;
         let str = '';
 
-        while (currentValue) {
-            str += `{${currentValue.val} } ->`;
-            currentValue = currentValue.next;
+        while (currentNode) {
+            str += '[' + currentNode.val + '] -> ';
+            currentNode = currentNode.next;
         }
 
-        str += `NULL`;
-
-        console.log(str);
+        // we exit the while loop when currentNode === null
+        str += 'null';
         return str;
     }
-    catch(e) {
-        console.error('No String listing')
-    }
 }
-};
 
-module.exports = {Node , Linkedlist};
+module.exports = { Node, LinkedList };
