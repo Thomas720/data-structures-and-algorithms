@@ -82,3 +82,33 @@ describe('expected failures', () => {
         expect(myList.includes('D')).toBe(false);
     });
 });
+
+it('add a node to the end', () => {
+    let myList = new LinkedList();
+    myList.insert('A');
+    myList.append('B');
+    let response = myList.append('C');
+
+    expect(response.val).toBe('C');  
+});
+
+it("add a new node with the given newValue immediately before the firs", () => {
+        let myList = new LinkedList();
+        myList.insert('A');
+        myList.append('B');
+        myList.insertBefore('A', 'B');
+    
+        expect(myList.head.val).toBe('Z');
+      });
+
+
+        it('insert after a node in the middle', () => {
+    let myList = new LinkedList();
+    myList.insert('a');
+    myList.append('b');
+    myList.append('c');
+    myList.insertAfter('b', 'z');
+
+    let response = myList.toString()
+    expect(response).toBe('{ a } -> { b } -> { z } -> { c } -> NULL');
+  });
