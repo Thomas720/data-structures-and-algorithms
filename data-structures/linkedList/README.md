@@ -2,7 +2,7 @@
 
 
 
-This application is implementation of a Linked List class, and any important methods related to that.
+This application is implementation of a Linked List class, and any important methods.
     
 ## Links
 - [Submission PR](https://github.com/Thomas720/data-structures-and-algorithms/pull/14)
