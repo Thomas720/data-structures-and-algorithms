@@ -55,86 +55,85 @@ class LinkedList {
         return str;
     }
 
-    append(val) {
-            try {
-   // constract new node and pass value
-   let newNode = new Node(val);
-   //intialize current node
-   let currentNode = this.head;
+    // add to the end of a list
+    append(newVal) {
+        // check if the list exists
+        // traverse to the end
 
-   //if empty make head
-   if(!this.head) {
-       this.head = newNode;
-   } else {
-       //we start the beggingng
-        currentNode = this.head;
+        // O(n)
+        // end of the list: currentNode.next = null
 
-        while(currentNode.next) {
-            currentNode = currentNode.next
+        let currentNode = this.head;
+
+        // what if list is empty
+        if (!currentNode) {
+            this.head = new Node(newVal);
+            return;
         }
 
+        // while (null.next)
+        while (currentNode.next) {
+            // not null
+            currentNode = currentNode.next;
+        }
+
+
+        let newNode = new Node(newVal);
+        // currentNode is the end of the list
         currentNode.next = newNode;
-
-        return newNode
-   }
-            } catch(e){
-                console.error('error appending new node at the last')
-            }
-     } 
-
-     insertBefore(value, newVal) {
-        
-        
-        if(newVal > 0 && newVal > this.size ) {  //if the index is out range
-            return;
-        }
-        
-        if(newVal === 0) {      //take care of the first index if it 0
-            this.head = new Node(value, this.head);
-            return;
-        }
-        
-        const newNode = new Node(value); //intializing new node with the value
-
-        let currentNode, previous; //initializing to variable current and previous
-
-        currentNode = this.head;  //set current to first 
-
-        let count = 0;  // making loop star from 0 counter
-
-        while(count < newVal) {
-            previous = currentNode; // this is the node befor that we wanted to insert
-            count++;
-            currentNode = currentNode.next; //making room for new element = Node after the newValue
-        }
-
-        newNode.next = currentNode;
-        // previous.next = newNode;
-
-        return newNode;
-
-     }
-
-       insertAfter(value, newVal){
-    
-      let newNode = new Node(newVal);
-      let currentNode = this.head;
-
-      while(currentNode){
-        if (currentNode.val === value) {
-          newNode.next = currentNode.next;
-          currentNode.next = newNode;
-          return;
-        } 
-          currentNode = currentNode.next;
-      }
-
-     
     }
+
+    insertBefore(newVal, beforeVal) {
+        
+
+        let prevCurrentNode = null;
+        let currentNode = this.head;
+
+        if (currentNode && currentNode.val === beforeVal) {
+            // the head is what we're trying to insert before
+            let newNode = new Node(newVal);
+            newNode.next = this.head;
+            this.head = newNode;
+            return;
+        }
+
+        while (currentNode) {
+            if (currentNode.val === beforeVal) {
+                let newNode = new Node(newVal);
+                prevCurrentNode.next = newNode;
+                newNode.next = currentNode;
+                return;
+            }
+
+            prevCurrentNode = currentNode;
+            currentNode = currentNode.next;
+        }
+
     
+        return false;
+    }
+
+    insertAfter(newVal, afterVal) {
+       
+        let currentNode = this.head;
+
+        while (currentNode) {
+            if (currentNode.val === afterVal) {
+                let newNode = new Node(newVal);
+
+                let nextCurrentNode = currentNode.next;
+                currentNode.next = newNode;
+                newNode.next = nextCurrentNode;
+            }
+
+            currentNode = currentNode.next;
+        }
+
+        return false;
+    }
+
+
 };
-
-
    
 
 
