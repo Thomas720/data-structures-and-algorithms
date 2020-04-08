@@ -6,8 +6,11 @@ This application is implementation of a Linked List class, and any important met
     
 ## Links
 - [Submission PR](https://github.com/Thomas720/data-structures-and-algorithms/pull/14)
+- [Submission PR](https://github.com/Thomas720/data-structures-and-algorithms/pull/16)
     
 ## Challenge
+
+-   Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 
 Write the following methods for the Linked List class:
 - `.append(value)` which adds a new node with the given value to the end of the list
