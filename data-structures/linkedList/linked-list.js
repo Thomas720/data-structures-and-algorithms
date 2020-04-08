@@ -132,6 +132,46 @@ class LinkedList {
         return false;
     }
 
+   
+// Gets the kth last element
+// K The number of elements to count backward.
+// The kth last element of the linked list, if it is not large enough, return 0
+ 
+getKthLastElement(head, k) {
+    if (!head || k < 1) {
+      return undefined;
+    }
+  
+    let current = head;
+    let nBehindCurrent = head;
+  
+    for (let i = 0; i < k - 1; i++) {
+      current = current.next;
+      if (!current) {
+        return undefined;
+      }
+    }
+  
+    while (typeof current.next !== 'undefined') {
+      nBehindCurrent = nBehindCurrent.next;
+      current = current.next;
+    }
+  
+    return nBehindCurrent;
+  }
+  
+//   /**
+//    * Creates a singly linked list node.
+//    *
+//    * @constructor
+//    * @param {Object} data The data associated with this node.
+//    * @param {SinglyLinkedList} next The next node in the linked list.
+//    */
+//   SinglyLinkedList(data, next) {
+//     this.data = data;
+//     this.next = next;
+//   }
+
 
 };
    
