@@ -8,7 +8,7 @@ This application is implementation of a Linked List class, and any important met
 - [Code Challenge 06 Submission PR](https://github.com/Thomas720/data-structures-and-algorithms/pull/14)
 - [Code Challenge 07 Submission PR](https://github.com/Thomas720/data-structures-and-algorithms/pull/16)
 
-- [Code Challenge 07 Submission PR](https://github.com/Thomas720/data-structures-and-algorithms/pull/19)
+- [Code Challenge 08 Submission PR](https://github.com/Thomas720/data-structures-and-algorithms/pull/19)
 
     
 ## Challenge
