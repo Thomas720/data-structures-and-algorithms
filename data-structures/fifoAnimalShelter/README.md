@@ -7,5 +7,3 @@
 ## Approach & Efficiency
 - First I cheked if there is empty node in the front then pushed the animal from the rear side. 
 
-## Solution
-<!-- Embedded whiteboard image -->
