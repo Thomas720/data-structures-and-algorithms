@@ -5,7 +5,7 @@
 This application is implementation of a Linked List class, and any important methods.
     
 ## Links
-- [Code Challenge 13 Submission PR](https://github.com/Thomas720/data-structures-and-algorithms/pull/24)
+- [Code Challenge 13 Submission PR](https://github.com/Thomas720/data-structures-and-algorithms/pull/25)
 
 
 
