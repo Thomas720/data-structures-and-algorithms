@@ -1,18 +1,62 @@
 
 'use strict';
 
-const validation = require('../multiBracketValidation/multi-bracket-validation.js')
+const validator = require('../multiBracketValidation/multi-bracket-validation.js');
 
-describe('CHECK ALL BRACKETS AND RETURN TRUE IF THEY MATCHED', () => {
-  test('TRUE CONDDITION', () => {
-    expect(validation('({[]})')).toEqual(true);
-    expect(validation('({[][]})')).toEqual(true);
-    expect(validation('({[()()]})')).toEqual(true);
-  });
+describe('happy path', () => {
+    it('{} > true', () => {
+        expect(validator('{}')).toBe(true);
+    });
 
-  test('CHECK THE GIVEN AND RETURN FALSE IF NOT MATCHED', () => {
-    expect(validation('({[})')).toEqual(false);
-    expect(validation('{[}]')).toEqual(false);
-    expect(validation('({[)')).toEqual(false);
-  });
+    it('{}(){} > true', () => {
+        expect(validator('{}(){}')).toBe(true);
+    });
+
+    it('()[[Extra Characters]] > true', () => {
+        expect(validator('()[[Extra Characters]]')).toBe(true);
+    });
+
+    it('(){}[[]] > true', () => {
+        expect(validator('(){}[[]]')).toBe(true);
+    });
+
+    it('{}{Code}[Fellows](()) > true', () => {
+        expect(validator('{}{Code}[Fellows](())')).toBe(true);
+    });
+});
+
+describe('expected failures', () => {
+    it('[({}] > false', () => {
+        expect(validator('[({}]')).toBe(false);
+    });
+
+    it('(]( > false', () => {
+        expect(validator('(](')).toBe(false);
+    });
+
+    it('{(}) > false', () => {
+        expect(validator('{(})')).toBe(false);
+    });
+});
+
+describe('edge cases', () => {
+    it('{ > false', () => {
+        expect(validator('{')).toBe(false);
+    });
+
+    it(') > false', () => {
+        expect(validator(')')).toBe(false);
+    });
+
+    it('[} > false', () => {
+        expect(validator('[}')).toBe(false);
+    });
+
+    it('blah > true', () => {
+        expect(validator('blah')).toBe(true);
+    });
+
+    it(' "" > true', () => {
+        expect(validator('')).toBe(true);
+    });
 });

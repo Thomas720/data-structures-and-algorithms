@@ -1,36 +1,69 @@
-'use strict';
+class Node {
+    constructor(val) {
+        this.val = val;
+        this.next = null;
+    }
+}
 
-const Validation = (bracket) => {
-  const checkBrackets = [];
-
-
-  //Make a loop for all openning brakets as needed and 
-  //Push them to the empty array
-  for (let i = 0; i < str.length; i++) {
-    if (bracket[i] === '(' || bracket[i] === '{' || bracket[i] === '[') {
-        checkBrackets.push(bracket[i]);
+class Stack {
+    constructor() {
+        this.top = null;
     }
 
+    push(val) {
+        let newNode = new Node(val);
+        newNode.next = this.top;
 
- // If there is similar bracketes that match our need pop it from the array
-    if ((bracket[i] === ')' && checkBrackets[checkBrackets.length - 1] === '(') 
-    || (bracket[i] === '}' && checkBrackets[checkBrackets.length - 1] === '{')
-    || (bracket[i] === ']' && checkBrackets[checkBrackets.length - 1] === '[')) 
-    
-    
-    {
-        checkBrackets.pop();
-    } else 
-    
-// Check if thre is unmatch brackets and return false if not matched
-    if ((bracket[i] === ')' && checkBrackets[checkBrackets.length - 1] !== '(') 
-    || (bracket[i] === '}' && checkBrackets[checkBrackets.length - 1] !== '{')
-    || (bracket[i] === ']' && checkBrackets[checkBrackets.length - 1] !== '[')) {
-      return false;
+        this.top = newNode;
     }
-  }
-  if (checkBrackets.length === 0) return true;
-  return false;
+
+    pop() {
+        if (!this.top) return null;
+
+        let tempNode = this.top;
+
+        this.top = tempNode.next;
+
+        tempNode.next = null;
+
+        return tempNode.val;
+    }
+
+    toString() {
+        let str = '';
+
+        let currentNode = this.top;
+
+        while (currentNode) {
+            str += currentNode.val + '\n';
+            currentNode = currentNode.next;
+        }
+
+        str += 'null';
+        return str;
+    }
+}
+
+const validator = (str) => {
+    let chars = str.split('');
+    let bracketStack = new Stack();
+
+    for (let i = 0; i < chars.length; i++) {
+        if (chars[i] === '{' || chars[i] === '[' || chars[i] === '(') {
+          
+            bracketStack.push(chars[i]);
+        } else if (chars[i] === '}' || chars[i] === ']' || chars[i] === ')') {
+            let poppedVal = bracketStack.pop();
+
+            if (chars[i] === '}' && poppedVal != '{') return false;
+            if (chars[i] === ']' && poppedVal != '[') return false;
+            if (chars[i] === ')' && poppedVal != '(') return false;
+        }
+    }
+
+    if (bracketStack.top) return false;
+
+    return true;
 };
 
-module.exports = Validation
+module.exports = validator;
