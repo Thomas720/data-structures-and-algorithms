@@ -5,10 +5,15 @@
   "main": "tree.js",
   "scripts": {
     "start": "node index.js",
-"lint": "eslint **/*.js",
-"test": "jest --verbose --coverage",
-"test-watch": "jest --watchAll --verbose --coverage"
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^26.0.0",
+    "lint": "^0.7.0",
+    "nodemon": "^2.0.3"
+  }
 }
