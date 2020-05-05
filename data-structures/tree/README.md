@@ -1,10 +1,10 @@
 # Tree Implementation
     
-<!-- Short summary or background information -->
+- This application will be the implementation of a BinaryTree and BinarySearchTree class, and any important methods related to that.
     
 ## Links
     
-<!-- Link to pull request, passing tests, etc -->
+- [Submmit Pull-Request](https://github.com/Thomas720/data-structures-and-algorithms/pull/27)
     
 ## Challenge
     
