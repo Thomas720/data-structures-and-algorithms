@@ -8,7 +8,7 @@
     
 ## Challenge
     
-![WhiteBoard]('../assets/tree.jpg')
+![WhiteBoard]('/assets/tree.jpg')
     
 ## Approach & Efficiency
     
