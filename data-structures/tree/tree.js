@@ -18,7 +18,7 @@ class BinaryTree {
         if(this.root === null) {
             return null;
         } else {
-            let result = new Array();
+            let result = [];
             function traversePreOrder(node) {
                 result.push(node.val);
                 node.left && traversePreOrder(node.left);
@@ -35,7 +35,7 @@ class BinaryTree {
         if(this.root === null) {
             return null;
         } else {
-            let result = new Array();
+            let result = [];
             function traverseInOrder(node) {
                 node.left && traverseInOrder(node.left);
                 result.push(node.val);
@@ -52,7 +52,7 @@ class BinaryTree {
         if(this.root == null) {
             return null;
         } else {
-            let result = new Array();
+            let result = [];
             function traversePostOrder(node) {
                 node.left && traversePostOrder(node.left);
                 node.right && traversePostOrder(node.right);
@@ -65,46 +65,46 @@ class BinaryTree {
     }
 }
 
-class BinarySearchTree {
-
+class BinarySearchTree extends BinaryTree {
     constructor() {
-        this.root = null;
+        super();
     }
 
     add(val) {
-        
-        let node = this.root;
-        if(node === null){
-            this.root = new Node(vale);
+        if (!this.root) {
+            this.root = new Node(val);
             return;
-        } else {
+        }
 
-            // recursife function to search tree
-            // mean if there is no val in the node it keeps searching to find a new place 
-            const searchTree = function(node) {
-                if(val < node.val) {
-                    if(node.left === null) {
-                        node.left = new Node(val);
-                        return;
-                    } else if (node.left !== null) {
-                        return searchTree(node.left);
-                    }
-                } else if (val > node.val) {
-                    if(node.right === null) {
-                        node.right = new Node(val);
-                        return;
-                    } else if(node.right !== null) {
-                        return searchTree(node.right);
-                    }
-                } else {
-                    return null;
-                }
-            };
-            return searchTree(node);
+     
+        let currentNode = this.root;
+
+        while (currentNode) {
+            if (currentNode.val > val) {
+                if (!currentNode.left) {
+                    currentNode.left = new Node(val);
+                    return;
+                } else currentNode = currentNode.left;
+            } else if (currentNode.val < val) {
+                if (!currentNode.right) {
+                    currentNode.right = new Node(val);
+                    return;
+                } else currentNode = currentNode.right;
+            } else if (currentNode.val === val) return;
         }
     }
 
-}
+    contains(val) {
+        let currentNode = this.root;
 
-module.exports = {BinaryTree , BinarySearchTree}
+        while (currentNode) {
+            if (currentNode.val > val) currentNode = currentNode.left;
+            else if (currentNode.val < val) currentNode = currentNode.right;
+            else if (currentNode.val === val) return true;
+        }
+
+        return false;
+    }
+}
+module.exports = {Node, BinaryTree , BinarySearchTree}
 
