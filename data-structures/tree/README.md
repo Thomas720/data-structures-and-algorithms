@@ -1,6 +1,6 @@
 # Tree Implementation
 
-- WE assign the First Root(Head Node) if the new node's value is lower than the current node's, go to the left child. if the new node's value is greater than the current node's, go to the right child. when the current node is null, we've reached a leaf node, we insert the new node in that position.
+- Assign the First Root(Head Node) to Null and Assigninged the New Node to the Root Node and for the second immplementation if the new node's value is lower than the current node's, go to the left child. if the new node's value is greater than the current node's, go to the right child. when the current node is null, we've reached a leaf node, we insert the new node in that position.
 
 ## Links
     
