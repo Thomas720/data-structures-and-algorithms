@@ -1,6 +1,6 @@
 # Tree Implementation
     
-<!-- Short summary or background information -->
+- WE assign the First Root(Head Node) if the new node's value is lower than the current node's, go to the left child. if the new node's value is greater than the current node's, go to the right child. when the current node is null, we've reached a leaf node, we insert the new node in that position.
     
 ## Links
     
@@ -8,16 +8,13 @@
     
 ## Challenge
     
-<!-- Description of the challenge -->
+![]('..assets/tree.jpg')
     
 ## Approach & Efficiency
     
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-    
-## API
-    
-<!-- Description of each method publicly available to your Tree classes -->
+- we can use classes to generate our nodes and tree. Each node only really needs a pointer to the left/less and right/greater sides, the value.
+
     
 ## Testing
-    
-<!-- Description of how to run your tests -->
+
+- npm test trees.test.js
