@@ -4,11 +4,11 @@
 
 ## Links
     
-- [Submmit Pull-Request](https://github.com/Thomas720/data-structures-and-algorithms/pull/27)
+- [Submmit Pull-Request](https://github.com/Thomas720/data-structures-and-algorithms/pull/28/)
     
 ## Challenge
     
-![]('..assets/tree.jpg')
+[WhiteBoard]('..assets/tree.jpg')
     
 ## Approach & Efficiency
     
