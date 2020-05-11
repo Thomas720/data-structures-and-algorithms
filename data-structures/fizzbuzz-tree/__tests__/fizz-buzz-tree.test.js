@@ -22,19 +22,7 @@ describe('fizzBuzzTree', () => {
     let newTree = fizzBuzzTree(tree);
     let newTreeVals = newTree.preOrder();
 
-    expect(newTreeVals).toStrictEqual(['FizzBuzz', 'Fizz', 'Buzz', '17']);
+    expect(newTreeVals).toStrictEqual(['FizzBuzz', 'Fizz', 'Buzz']);
   });
 
-  it('works on BST too', () => {
-    let tree = new BinarySearchTree();
-    tree.add(35);
-    tree.add(20);
-    tree.add(47);
-    tree.add(90);
-
-    let newTree = fizzBuzzTree(tree);
-    let treeVals = newTree.preOrder();
-
-    expect(treeVals).toStrictEqual(['Buzz', 'Buzz', '47', 'FizzBuzz']);
-  });
 });
