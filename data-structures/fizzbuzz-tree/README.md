@@ -1,6 +1,6 @@
 # Conduct “FizzBuzz” on a tree while traversing through it. Change the values of each of the nodes dependent on the current node’s value.
 
-[Pull - Request]()
+[Pull - Request](https://github.com/Thomas720/data-structures-and-algorithms/pull/30)
 
 ## Write a function called FizzBuzzTree which takes a tree as an argument.
 
