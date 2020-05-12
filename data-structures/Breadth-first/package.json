@@ -1,0 +1,14 @@
+{
+  "name": "breadth-first",
+  "version": "1.0.0",
+  "description": "",
+  "main": "breadth-first.js",
+  "scripts": {
+    "start": "node breadth-first.js",
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage"
+  },
+  "author": "",
+  "license": "ISC"
+}
