@@ -10,5 +10,9 @@
     "test-watch": "jest --watchAll --verbose --coverage"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^26.0.1",
+    "lint": "^0.7.0"
+  }
 }
