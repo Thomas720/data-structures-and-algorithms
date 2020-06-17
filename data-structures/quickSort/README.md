@@ -4,4 +4,4 @@
 
 
 See 
-[BLOG](./BLOG.md)
+[BLOG]('./BLOG.MD')
