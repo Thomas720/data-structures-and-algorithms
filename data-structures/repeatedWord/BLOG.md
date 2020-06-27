@@ -1,0 +1,19 @@
+# Find the first repeated word in a book
+
+# Implementation
+
+1. The first Step is Spliting the Strings to Individual words
+
+2. Initiate a hash map so that we can use key-value pairs
+
+3. Initiate an array that will hold the repeated words of the string
+
+4. Create the EDGE-CASE and make sure if the string is empty
+
+5. Make for loop and if the word doesn't exist in the split array, put the word in the hash map.
+
+6. Or Else if the word exists in the hash map, get it
+
+7. loop over the hash array, if the value doesnt exist, push the word into the repeated words array
+
+8. The final Result
