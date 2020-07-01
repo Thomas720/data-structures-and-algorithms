@@ -16,4 +16,4 @@
 
 ### Solutions
 
-![White Board]("./wb.jpg")
+![White Board]('data-structures/treeIntersection/wb.jpg')
