@@ -16,4 +16,4 @@
 
 ### Solutions
 
-![White Board]('.../wb.jpg')
+![White Board]('../wb.jpg')
