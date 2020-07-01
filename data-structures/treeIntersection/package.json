@@ -1,0 +1,16 @@
+{
+  "name": "treeintersection",
+  "version": "1.0.0",
+  "description": "- (Linear Time) We can find common elements in O(n) time.",
+  "main": "node.js",
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^26.1.0"
+  }
+}
