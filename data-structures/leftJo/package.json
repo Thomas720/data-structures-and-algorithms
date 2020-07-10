@@ -1,0 +1,16 @@
+{
+  "name": "leftjo",
+  "version": "1.0.0",
+  "description": "1. Function that LEFT JOINs two hashmaps into a single data structure.",
+  "main": "left-join.js",
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^26.1.0"
+  }
+}
